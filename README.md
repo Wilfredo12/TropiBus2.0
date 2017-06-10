@@ -1,4 +1,5 @@
-TropiBusTracker is an app to track buses in the municipality of Mayaguez
+TropiBus is an application that enables user view the routes and bus stops of the buses in the Municipality of Mayaguez.
+It also enables users to view if buses are active on any routes.
 
 ## How to use this project
 Make sure you have ionic 2 and cordova installed by running:
