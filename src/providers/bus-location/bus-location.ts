@@ -15,8 +15,8 @@ export class BusLocation {
     console.log('Hello BusLocation Provider');
   }
   getBusLocation(routeID){
-    let url="http://localhost:8080/timuserRoutes/getBusLocation?route_id="+routeID
-    //let url="https://evening-crag-15118.herokuapp.com/timuserRoutes/getBusLocation?route_id="+routeID
+    //let url="http://localhost:8080/timuserRoutes/getBusLocation?route_id="+routeID
+    let url="https://evening-crag-15118.herokuapp.com/timuserRoutes/getBusLocation?route_id="+routeID
     return this.http.get(url).map(res=>res.json())
   }
 
