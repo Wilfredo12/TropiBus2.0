@@ -1,26 +1,28 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+TropiBus is an application that enables user view the routes and bus stops of the buses in the Municipality of Mayaguez.
+It also enables users to view if buses are active on any routes.
 
-## How to use this template
-
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
-
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
+## How to use this project
+Make sure you have ionic 2 and cordova installed by running:
 ```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
+$ npm install -g ionic cordova
 ```
 
-Then, to run it, cd into `myTabs` and run:
-
+To install the git project pull the repository from  git using:
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+$ git clone https://github.com/Wilfredo12/TropiBusTracker2.0.git
 ```
 
-Substitute ios for android if not on a Mac.
+Then install the Ionic 2 geolocation and background geolocation plugins by running:
+```bash
+$ ionic cordova plugin add cordova-plugin-geolocation
+$ npm install --save @ionic-native/geolocation
+$ ionic cordova plugin add cordova-plugin-mauron85-background-geolocation
+$ npm install --save @ionic-native/background-geolocation
+```
+Finally install the Leaflet map libraries on your project by running:
+```bash
+$ npm install leaflet --save
+$ npm install @types/leaflet --save
+```
 
+After this you are ready to go!
