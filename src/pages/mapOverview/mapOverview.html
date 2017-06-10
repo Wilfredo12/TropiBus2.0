@@ -1,0 +1,30 @@
+
+<ion-header>
+  <ion-navbar color="tropiBlue">
+    <ion-title>
+      TropiBus
+    </ion-title>
+    <!--<ion-buttons end>
+      <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
+    </ion-buttons>  -->
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+  <div #map id="mapid1"></div>
+  <ion-fab bottom left>
+    <button ion-fab mini color="tropiBlue"><ion-icon name="bookmarks"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab (click)="rural()" [color]="getActive(1)">Rural</button>
+      <button ion-fab (click)="city()" [color]="getActive(2)">City</button>
+      <button ion-fab (click)="litoral()" [color]="getActive(3)">Litoral</button>
+    </ion-fab-list>
+  </ion-fab>
+  <ion-fab bottom right>
+   <button ion-fab mini color="tropiBlue" (click)="myLocation()"><ion-icon name="locate"></ion-icon></button>
+ </ion-fab> 
+ <ion-fab [hidden]="!routeClicked.name" top right>
+   <button ion-button color="tropiBlue" (click)="viewRoute()">View {{routeClicked.name}}</button>
+ </ion-fab>
+  
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="tropiBlue"> 
+    <ion-title>
+      Routes & Stops
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="refreshRoutes($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing...">
+      </ion-refresher-content>
+    </ion-refresher>
+ <ion-list>
+  <ion-item  *ngFor="let route of routes">
+    <ion-icon name="bus" item-left></ion-icon>
+      <h2>{{route.route_name}}</h2>
+      <p>{{route.route_description}}</p>
+      <!--<ion-buttons end>-->
+      <!--<button ion-button color="dark"  (click)="viewDescription(route)">Description </button>-->
+      <button ion-button [color]="getStatus(route.status)">{{route.status}}</button>
+      <button ion-button color="dark"  (click)="viewRoute(route)" round outline end> View&nbsp;Route&nbsp; <ion-icon name="arrow-dropright-circle"> </ion-icon></button>
+      <!--</ion-buttons>-->
+  </ion-item>
+  
+</ion-list>
+
+
+</ion-content>

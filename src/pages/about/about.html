@@ -1,11 +1,24 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="tropiBlue"> 
     <ion-title>
-      About
+      Information
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <h5>TIM Working Hours</h5>
+    <ion-list>
+    
+    <ion-item >Monday- Friday &nbsp;&nbsp;    6:00am - 6:00 pm</ion-item>
+    <ion-item>Saturday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  No Operational</ion-item>
+    <ion-item>Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; No Operational</ion-item>
 
+</ion-list>
+<h5>Message Board</h5>
+<div id="messageBoard">  
+    <ion-list>
+    <ion-item *ngFor="let message of messages"> <ion-icon name="chatbubbles" item-left></ion-icon>{{message.message_text}}<p>{{message.message_date | date}}</p></ion-item>
+    </ion-list>
+</div>
 </ion-content>

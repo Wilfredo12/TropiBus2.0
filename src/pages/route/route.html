@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="tropiBlue"> 
+    <ion-title>
+      {{route.route_name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div #mapid id="mapid"></div>
+    <h3>
+      Stop List
+    </h3>
+    <div  id="routeStops">
+        <ion-list>
+          
+                <ion-item (click)="centerStop(stop)" *ngFor="let stop of stops">
+                    <ion-icon name="bus" item-left></ion-icon>
+                    <h2>{{stop.stop_name}}</h2>
+                    <p>{{stop.stop_description}}</p>
+                     <!--<button ion-button color="dark"  (click)="viewStopOnBrowser(stop)" round outline end> Get Directions&nbsp; <ion-icon name="arrow-dropright-circle"> </ion-icon></button>
+     -->
+                </ion-item>
+        </ion-list>
+    </div>
+     <ion-fab middle right>
+   <button ion-fab mini color="tropiBlue" (click)="nearbyStop()"><ion-icon name="walk"></ion-icon></button>
+ </ion-fab>
+ <ion-fab [hidden]="!nearbyStopMarker" middle left>
+   <button ion-button color="tropiBlue" (click)="getDirections()">Get Directions</button>
+ </ion-fab> 
+</ion-content>
